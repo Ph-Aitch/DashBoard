@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 20px;
+    font-family: 'Roboto', serif, 'Times new roman';
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    grid-template-rows: minmax(150px, 200px) 1fr;
+    grid-template-areas:
+        "side head head head"
+        "side main main main"
+        "side main main main"
+        "side main main main";
+}
+
+/* header section */
+header {
+    grid-area: head;
+    display: grid;
+    grid-template-columns: minmax(600px, 1fr) minmax(600px, 1fr);
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.search,
+.info,
+.user,
+.btns {
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    text-align: center;
+    background-color: #ccc;
+}
+
+.info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.search input {
+    width: 50%;
+    height: 30%;
+    background-color: ghostwhite;
+    border-radius: 20px;
+    margin-left: 20px;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: box-shadow .4s ease, border .4s ease;
+}
+
+.search label {
+    cursor: pointer;
+}
+
+.search input:hover,
+.search input:focus {
+    box-shadow: 0px 0px 5px 2px whitesmoke;
+    border: 1px solid black;
+}
+
+.user-icon,
+.user-icon3 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.user {
+    display: flex;
+}
+
+.user h1 {
+    position: relative;
+    top: 30px;
+    right: 50px;
+}
+
+.user p {
+    position: relative;
+    left: 25px;
+    top: 10px;
+}
+
+.user h1 a {
+    text-decoration: underline;
+    color: #333;
+}
+
+.user-icon2 {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.btns a {
+    text-decoration: none;
+    display: inline-block;
+    color: whitesmoke;
+    background-color: dodgerblue;
+    padding: 7px 15px;
+    border-radius: 20px;
+    transition: transform .5s ease, color .5s ease, background-color .5s ease;
+}
+
+.btns a:hover {
+    transform: scale(1.2);
+    background-color: goldenrod;
+    color: black;
+}
+
+/* sidebar section */
+.sideBar {
+    grid-area: side;
+    background-image: linear-gradient(to right, #ebebeb, #f5f5f5, #ebebeb);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 300px 300px;
+    justify-items: start;
+    align-items: center;
+    color: #333;
+    font-weight: 300;
+    position: fixed;
+    height: 100vh;
+    width: 300px;
+    z-index: 3;
+}
+
+.sideBar a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    padding-left: 25px;
+    transition: box-shadow .3s ease, color .3s ease;
+}
+
+.sideBar a:hover {
+    box-shadow: inset 300px 0px 0px 0px #333;
+    color: whitesmoke;
+}
+
+.sideBar h1 {
+    font-size: 40px;
+    font-weight: 400;
+    justify-self: center;
+    text-shadow: 0px 10px 13px white, 0px -10px 13px white, 10px 0px 13px white, -10px 0px 13px white;
+}
+
+.links1,
+.links2 {
+    width: 100%;
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.links2 {
+    position: relative;
+    bottom: 60px;
+}
+
+/* main section */
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: minmax(800px, 3fr) minmax(200px, 1fr);
+    font-size: 80%;
+    background-color: whitesmoke;
+}
+
+.projects {
+    position: relative;
+}
+
+.projects>h2 {
+    position: absolute;
+    top: 10px;
+    left: 4em;
+}
+
+.projects-wrapper {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    place-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+    position: relative;
+}
+
+.project-card {
+    min-width: 440px;
+    max-width: 500px;
+    height: 200px;
+    background-color: #333;
+    color: whitesmoke;
+    border-radius: 15px;
+    border-left: 15px solid goldenrod;
+    padding: 15px;
+    box-shadow: -2px 2px 5px 2px #aaa;
+    transition: transform .5s ease, box-shadow .5s ease;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: scale(1.07);
+    box-shadow: -7px 7px 15px 2px #aaa;
+}
+
+.project-card h2 {
+    color: goldenrod;
+}
+
+.icons {
+    position: absolute;
+    bottom: 5px;
+    width: 90%;
+    text-align: end;
+}
+
+.icons>* {
+    margin: 0 15px;
+    cursor: pointer;
+    transition: transform .5s ease, color .5s ease;
+}
+
+.icons>*:hover {
+    transform: scale(1.3);
+    color: dodgerblue;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    margin-right: 50px;
+}
+
+.annoContainer, .trendContainer {
+    width: 100%;
+    min-width: 300px;
+    height: 350px;
+    place-self: center;
+    place-content: center;
+    background-color: #333;
+    color: whitesmoke;
+    position: relative;
+    top: 20px;
+    border-radius: 15px;
+    font-weight: 300;
+    box-shadow: -2px 2px 5px 2px #aaa;
+    padding: 0 40px;
+}
+
+.annoContainer h2 , .trendContainer h2{
+    position: absolute;
+    top: -30px;
+    left: 0;
+    color: black;
+}
+
+.annoContainer h3 {
+    color: dodgerblue;
+    text-shadow: 5px 5px 10px #111;
+}
+
+.annoContainer :not(:first-of-type) {
+    border-top: 1px solid whitesmoke;
+    margin: 20px 0;
+    padding-top: 15px;
+}
+
+.trendContainer {
+    height: 270px;
+}
+
+.trendCard {
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    margin: 2px 0;
+}
+
+.trendCard h3 a {
+    text-decoration: none;
+    color: whitesmoke;
+    transition: color .5s ease;
+}
+
+.trendCard h3 a:hover {
+    color: goldenrod;
+}
+
+:is(.user-icon,.user-icon2, .user-icon3) {
+    overflow: hidden;
+    background-color: white;
+}
+
+:is(.user-icon,.user-icon2, .user-icon3) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
